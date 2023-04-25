@@ -1,27 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-
-function Todo(props) {
-  return (
-    <div>
-      {props.todo}
-      <button onClick={() => props.deleteTodo(props.index)}>X</button>
-    </div>
-  )
-}
-
-function Form(props) {
-  return (
-    <form onSubmit={props.handleSubmit}>
-        <input 
-          type="text"
-          value={props.todo} 
-          onChange={e => props.setTodo(e.target.value)}>
-        </input>
-        <button>Add to List</button>
-      </form>
-  )
-}
+import Todo from './components/Todo'
+import Form from './components/Form'
 
 function App() {
   const [todo, setTodo] = useState("")
